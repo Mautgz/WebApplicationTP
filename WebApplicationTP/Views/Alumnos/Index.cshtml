@@ -1,0 +1,32 @@
+﻿@using WebApplicationTP.Models;
+@model List<AlumnosCLS>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Agregar", "Agregar", "Alumnos", null, new { @class = "btn btn-primary" })
+
+<table class="table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>@Html.LabelFor(p => Model[0].alumnoid) </td>
+            <td>@Html.LabelFor(p => Model[0].apellidos) </td>
+            <td>@Html.LabelFor(p => Model[0].nombres) </td>       
+            <td>@Html.LabelFor(p => Model[0].escuela) </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.alumnoid</td>
+                <td>@item.apellidos</td>
+                <td>@item.nombres</td>    
+                <td>@item.escuela</td>
+              
+            </tr>
+        }
+    </tbody>
+
+</table>

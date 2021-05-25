@@ -1,0 +1,36 @@
+﻿@using WebApplicationTP.Models
+@model AlumnosCLS
+@{
+    ViewBag.Title = "Agregar";
+}
+
+<h2>Agregar</h2>
+<div class="row">
+    <div class="col-md-6">
+
+        @using (Html.BeginForm("Agregar", "Alumnos", FormMethod.Post))
+        {
+            <div>
+                @Html.LabelFor(p => p.nombres)
+                @Html.TextBoxFor(p => p.nombres, new { @class = "form-control" })
+                @Html.ValidationMessage("nombres", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                @Html.LabelFor(p => p.apellidos)
+                @Html.TextBoxFor(p => p.apellidos, new { @class = "form-control" })
+                @Html.ValidationMessage("apellidos", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                @Html.LabelFor(p => p.escuela)
+                @Html.TextBoxFor(p => p.escuela, new { @class = "form-control" })
+                @Html.ValidationMessage("escuela", new { @class = "text-danger" })
+            </div>
+
+            <br />
+            <div style="margin:auto">
+                <input type="submit" class="btn btn-primary" value="Guardar" />
+            </div>
+        }
+    </div>
